@@ -547,7 +547,7 @@ MonoBehaviour:
   mouseDistance: 0
   timeDown: 0
   timeUp: 0
-  multDefault: 0
+  multDefault: 0.1
   multPower: 0
   multDecay: 0
   maxMultTime: 0

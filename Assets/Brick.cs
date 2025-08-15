@@ -67,15 +67,24 @@ public class Brick : MonoBehaviour
 
         if (Input.GetButtonUp("Fire1"))
         {
-            rb.AddForce(mouseOffset * multPower, ForceMode.Impulse);
+            
             timeUp = 0f;
             upPos = rb.position;
 
             if (mouseDistance > 200f)
             {
                 launched = true;
+                rb.AddForce(-mouseOffset * multPower + Vector3.forward * 50f, ForceMode.Impulse);
             }
         }
-        
+
+        if (launched)
+        {
+            rb.useGravity = true;
+        }
+        else
+        {
+            rb.useGravity = false;
+        }
     }
 }
