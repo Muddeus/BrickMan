@@ -5,7 +5,7 @@ public class BrickMode : MonoBehaviour
     public Camera firstPersonCamera;
     public Camera brickCamera;
     public Animator camAnim;
-    public Camera tutorialBrickCam;
+    public GameObject tutorialBrickCam;
 
     public StateMachineMovement playerController;
 
@@ -14,7 +14,7 @@ public class BrickMode : MonoBehaviour
     {
         firstPersonCamera.enabled = true;
         brickCamera.enabled = false;
-        tutorialBrickCam.enabled = false;
+        tutorialBrickCam.SetActive(false);
     }
 
 
@@ -28,7 +28,7 @@ public class BrickMode : MonoBehaviour
         playerController.EnterBrickMode();
         camAnim.Play("CameraMove");
         firstPersonCamera.enabled = false;
-        brickCamera.enabled = false;
-        tutorialBrickCam.enabled = true;
+        brickCamera.enabled = true;
+        tutorialBrickCam.SetActive(false);
     }
 }

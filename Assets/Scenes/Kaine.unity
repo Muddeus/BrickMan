@@ -3673,6 +3673,7 @@ MonoBehaviour:
   firstPersonCamera: {fileID: 1962602234}
   brickCamera: {fileID: 1775174790}
   camAnim: {fileID: 1775174794}
+  tutorialBrickCam: {fileID: 641213322}
   playerController: {fileID: 1511986859}
 --- !u!65 &455707012
 BoxCollider:
@@ -4909,6 +4910,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &641213322 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4304443897249291724, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+  m_PrefabInstance: {fileID: 884958406}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &663348056
 GameObject:
   m_ObjectHideFlags: 0
@@ -8097,6 +8103,71 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1864036371}
   m_LocalEulerAnglesHint: {x: -12.187, y: -90, z: 90}
+--- !u!1001 &884958406
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -16.06
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 15.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 9.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.00000035456833
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.00000004667971
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99144495
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.13052596
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: 1859927723790564678, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304443897249291724, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_Name
+      value: TutorialBrickCam
+      objectReference: {fileID: 0}
+    - target: {fileID: 4304443897249291724, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5488982000896259704, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
 --- !u!1 &899305934
 GameObject:
   m_ObjectHideFlags: 0
@@ -14046,7 +14117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!20 &1775174790
 Camera:
   m_ObjectHideFlags: 0
@@ -18099,3 +18170,4 @@ SceneRoots:
   - {fileID: 1846632616}
   - {fileID: 455707013}
   - {fileID: 1467168564}
+  - {fileID: 884958406}
