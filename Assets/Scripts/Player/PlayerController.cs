@@ -55,4 +55,14 @@ public class StateMachineMovement : MonoBehaviour
 
         return moveDirection;
     }
+
+    public void EnterBrickMode()
+    {
+        walkSpeed = 0;
+    }
+    
+    public void ExitBrickMode()
+    {
+        walkSpeed = 8;
+    }
 }

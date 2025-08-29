@@ -3672,6 +3672,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstPersonCamera: {fileID: 1962602234}
   brickCamera: {fileID: 1775174790}
+  camAnim: {fileID: 1775174794}
+  playerController: {fileID: 1511986859}
 --- !u!65 &455707012
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11168,7 +11170,7 @@ GameObject:
   - component: {fileID: 1346075371}
   - component: {fileID: 1346075370}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: Politician
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11633,6 +11635,41 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1467168563
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1467168564}
+  m_Layer: 0
+  m_Name: Gateframe
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1467168564
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1467168563}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.526438, y: 13.095758, z: 3.858078}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1887692569}
+  - {fileID: 1616057992}
+  - {fileID: 1898569484}
+  - {fileID: 1487478076}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1478716725
 GameObject:
   m_ObjectHideFlags: 0
@@ -12330,12 +12367,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487478070}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 13.695, y: 14.71, z: -12.244373}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -4.831438, y: 1.6142416, z: -16.102451}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1467168564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1498636889
 Mesh:
@@ -12762,12 +12799,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1616057988}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.52, y: 8.48, z: -12.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 4.9935627, y: -4.615759, z: -16.048077}
   m_LocalScale: {x: 5.2008, y: 12.942393, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1467168564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1636467328
 GameObject:
@@ -14002,6 +14039,7 @@ GameObject:
   - component: {fileID: 1775174790}
   - component: {fileID: 1775174792}
   - component: {fileID: 1775174791}
+  - component: {fileID: 1775174794}
   m_Layer: 0
   m_Name: BrickCamera
   m_TagString: Untagged
@@ -14120,13 +14158,35 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775174789}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000004044659, y: -0.99055904, z: 0.13708732, w: 0.0000029225719}
-  m_LocalPosition: {x: -15.028, y: 12.33, z: 3.54}
+  m_LocalRotation: {x: 0, y: -0.9905587, z: 0.1370901, w: 0}
+  m_LocalPosition: {x: -15, y: 12, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 15.759, y: -180, z: 0}
+--- !u!95 &1775174794
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775174789}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: adea2d9b73473f84f994d2009b51219b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1828217796
 GameObject:
   m_ObjectHideFlags: 0
@@ -15191,12 +15251,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1887692565}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.94, y: 12.02, z: -12.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.41356277, y: -1.075758, z: -16.048077}
   m_LocalScale: {x: 5.2008, y: 5.405524, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1467168564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1892283181
 GameObject:
@@ -15651,12 +15711,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898569480}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.47, y: 8.48, z: -12.19}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -4.0564375, y: -4.615759, z: -16.048077}
   m_LocalScale: {x: 5.2008, y: 12.942393, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1467168564}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1902893355
 Mesh:
@@ -18031,14 +18091,11 @@ SceneRoots:
   - {fileID: 899305936}
   - {fileID: 663348060}
   - {fileID: 1962602235}
+  - {fileID: 1775174793}
   - {fileID: 1511986864}
   - {fileID: 1864036371}
   - {fileID: 1346075375}
   - {fileID: 4170380594474480763}
   - {fileID: 1846632616}
-  - {fileID: 1887692569}
-  - {fileID: 1616057992}
-  - {fileID: 1898569484}
-  - {fileID: 1487478076}
-  - {fileID: 1775174793}
   - {fileID: 455707013}
+  - {fileID: 1467168564}
