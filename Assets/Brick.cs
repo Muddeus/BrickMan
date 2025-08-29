@@ -9,6 +9,8 @@ public class Brick : MonoBehaviour
     public float timeDown;
     public float timeUp;
 
+    public Transform origin;
+
     public float multDefault;
     public float multPower;
     public float multDecay;
@@ -42,7 +44,7 @@ public class Brick : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            mouseOffset = mouseDownPos - mousePos;
+            mouseOffset = (mouseDownPos - mousePos);
             mouseDistance = mouseOffset.magnitude;
             rb.position =  startPos - mouseOffset/100f;
 
@@ -61,7 +63,7 @@ public class Brick : MonoBehaviour
             
             if (!launched && timeUp < timeToLerp)
             {
-                rb.position = Vector3.Lerp(upPos, startPos, timeUp * (1/timeToLerp));
+                rb.position = Vector3.Lerp(origin.position, startPos, timeUp * (1/timeToLerp));
             }
         }
 
@@ -74,13 +76,14 @@ public class Brick : MonoBehaviour
             if (mouseDistance > 200f)
             {
                 launched = true;
-                rb.AddForce(-mouseOffset * multPower + Vector3.forward * 50f, ForceMode.Impulse);
+                rb.AddForce(-mouseOffset * multPower + transform.forward * 50f, ForceMode.Impulse);
             }
         }
 
         if (launched)
         {
             rb.useGravity = true;
+            rb.AddForce(Vector3.down, ForceMode.Force);
         }
         else
         {
