@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 public class BrickMode : MonoBehaviour
 {
@@ -30,5 +32,14 @@ public class BrickMode : MonoBehaviour
         firstPersonCamera.enabled = false;
         brickCamera.enabled = true;
         tutorialBrickCam.SetActive(false);
+        StartCoroutine(BrickModeActivate());
+    }
+
+    IEnumerator BrickModeActivate()
+    {
+        yield return new WaitForSeconds(3.5f);
+        tutorialBrickCam.SetActive(true);
+        firstPersonCamera.enabled = false;
+        brickCamera.enabled = false;
     }
 }
