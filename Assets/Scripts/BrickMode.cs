@@ -9,6 +9,8 @@ public class BrickMode : MonoBehaviour
     public Animator camAnim;
     public GameObject tutorialBrickCam;
 
+    public CursorManager cursorManager;
+
     public StateMachineMovement playerController;
 
 
@@ -41,5 +43,6 @@ public class BrickMode : MonoBehaviour
         tutorialBrickCam.SetActive(true);
         firstPersonCamera.enabled = false;
         brickCamera.enabled = false;
+        cursorManager.BrickMode();
     }
 }
