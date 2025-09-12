@@ -15,12 +15,15 @@ public class Brick : MonoBehaviour
     public float multPower;
     public float multDecay;
     public float maxMultTime;
+    public float throwForce;
 
     public bool launched;
 
     public Rigidbody rb;
     public Vector3 startPos;
     public Vector3 upPos;
+
+    public Transform lookAtEnemy;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -46,6 +49,8 @@ public class Brick : MonoBehaviour
         {
             mouseOffset = (mouseDownPos - mousePos);
             mouseDistance = mouseOffset.magnitude;
+            mouseOffset.y /= 10f;
+            mouseOffset.x /= 15f;
             rb.position =  startPos - mouseOffset/100f;
 
             if (timeDown > maxMultTime)
@@ -76,7 +81,8 @@ public class Brick : MonoBehaviour
             if (mouseDistance > 200f)
             {
                 launched = true;
-                rb.AddForce(-mouseOffset * multPower + transform.forward * 50f, ForceMode.Impulse);
+                Vector3 direction = -mouseOffset * multPower + lookAtEnemy.forward * throwForce;
+                rb.AddForce(direction, ForceMode.Impulse);
             }
         }
 
