@@ -18,12 +18,20 @@ public class AIMove : MonoBehaviour
 
     private void Update()
     {
-        if (agent.remainingDistance < 0.2)
+        if (agent != null)
         {
-            Transform destination = markers[0];
-            if (currentDestination) destination = markers[1];
-            agent.destination = destination.position;
-            currentDestination = !currentDestination;
+            if (agent.remainingDistance < 0.2)
+            {
+                Transform destination = markers[0];
+                if (currentDestination) destination = markers[1];
+                agent.destination = destination.position;
+                currentDestination = !currentDestination;
+            }
+
+        }
+        else
+        {
+            return;
         }
     }
 }

@@ -4,10 +4,10 @@ using System.Collections;
 
 public class BrickMode : MonoBehaviour
 {
-    public Camera firstPersonCamera;
-    public Camera brickCamera;
-    public Animator camAnim;
+    public GameObject firstPersonCamera;
+    public GameObject brickCamera;
     public GameObject tutorialBrickCam;
+    public Animator camAnim;
 
     public CursorManager cursorManager;
 
@@ -16,23 +16,17 @@ public class BrickMode : MonoBehaviour
 
     private void Start()
     {
-        firstPersonCamera.enabled = true;
-        brickCamera.enabled = false;
+        firstPersonCamera.SetActive(true);
+        brickCamera.SetActive(false);
         tutorialBrickCam.SetActive(false);
-    }
-
-
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
     {
         playerController.EnterBrickMode();
         camAnim.Play("CameraMove");
-        firstPersonCamera.enabled = false;
-        brickCamera.enabled = true;
+        firstPersonCamera.SetActive(false);
+        brickCamera.SetActive(true);
         tutorialBrickCam.SetActive(false);
         StartCoroutine(BrickModeActivate());
     }
@@ -40,9 +34,9 @@ public class BrickMode : MonoBehaviour
     IEnumerator BrickModeActivate()
     {
         yield return new WaitForSeconds(3.5f);
+        firstPersonCamera.SetActive(false);
+        brickCamera.SetActive(false);
         tutorialBrickCam.SetActive(true);
-        firstPersonCamera.enabled = false;
-        brickCamera.enabled = false;
         cursorManager.BrickMode();
     }
 }
