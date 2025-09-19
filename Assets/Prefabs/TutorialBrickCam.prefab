@@ -286,9 +286,6 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8881084148216847056, guid: b8aca023582ade64d9c521aff8caf14e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4402524352584918553}
-    - targetCorrespondingSourceObject: {fileID: 8881084148216847056, guid: b8aca023582ade64d9c521aff8caf14e, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 999061074806611929}
   m_SourcePrefab: {fileID: 100100000, guid: b8aca023582ade64d9c521aff8caf14e, type: 3}
 --- !u!1 &1371504182292837665 stripped
@@ -296,6 +293,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8881084148216847056, guid: b8aca023582ade64d9c521aff8caf14e, type: 3}
   m_PrefabInstance: {fileID: 7509608562119127025}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
 --- !u!114 &4402524352584918553
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,6 +322,8 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   upPos: {x: 0, y: 0, z: 0}
   lookAtEnemy: {fileID: 9057168659908634898}
+=======
+>>>>>>> Stashed changes
 --- !u!54 &999061074806611929
 Rigidbody:
   m_ObjectHideFlags: 0
