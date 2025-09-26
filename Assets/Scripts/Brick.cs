@@ -64,8 +64,14 @@ public class Brick : MonoBehaviour
                 multPower -= multDecay * Time.deltaTime;
             }
             timeDown += Time.deltaTime;
-            print("MouseOffset: " + mouseOffset);
-            print("Mouse distance: " + mouseDistance);
+            //print("MouseOffset: " + mouseOffset);
+            //print("Mouse distance: " + mouseDistance);
+
+            if (!launched)
+            {
+                rb.angularVelocity = Vector3.ClampMagnitude(rb.angularVelocity, 1f);
+                rb.linearVelocity = Vector3.ClampMagnitude(rb.linearVelocity, 1f);
+            }
         }
         else // if not holding mouse1
         {
@@ -96,6 +102,7 @@ public class Brick : MonoBehaviour
         {
             rb.useGravity = true;
             rb.AddForce(Vector3.down, ForceMode.Force);
+            rb.angularVelocity = Random.insideUnitSphere * (Random.value * 4f);
 
             if (!brickDuped && timeUp > 0.1f)
             {
@@ -105,7 +112,7 @@ public class Brick : MonoBehaviour
                 newRb.linearVelocity = rb.linearVelocity;
                 newRb.angularVelocity = rb.angularVelocity;
                 Destroy(brick.GetComponent<Brick>());
-                transform.position += Vector3.down * 50;
+                transform.position = Vector3.down * 50;
                 //newRb = rb;
             }
         }
