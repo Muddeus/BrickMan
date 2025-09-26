@@ -44,7 +44,8 @@ public class BrickMode : MonoBehaviour
             tutorialBrickCam.SetActive(false);
             StartCoroutine(BrickModeActivate1());
         }
-        else if (SceneManager.GetActiveScene().name == "Part2")
+        else
+        //else if (SceneManager.GetActiveScene().name == "Part2")
         {
             brickCamera.SetActive(true);
             camAnim.Play("CameraMove");
