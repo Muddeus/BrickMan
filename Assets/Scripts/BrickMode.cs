@@ -67,7 +67,7 @@ public class BrickMode : MonoBehaviour
 
     IEnumerator BrickModeActivate2()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2.5f);
         firstPersonCamera.SetActive(false);
         brickCamera.SetActive(false);
         tutorialBrickCam.SetActive(true);

@@ -17,8 +17,6 @@ public class AIDeath : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        print("hit");
-
         if (other.gameObject.CompareTag("Brick"))
         {
             Destroy(navMesh);
