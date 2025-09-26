@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class BrickMode : MonoBehaviour
 {
@@ -13,27 +14,60 @@ public class BrickMode : MonoBehaviour
 
     public StateMachineMovement playerController;
 
+    public BoxCollider col;
+
+    private Scene currentScene;
+
 
     private void Start()
     {
         firstPersonCamera.SetActive(true);
         brickCamera.SetActive(false);
         tutorialBrickCam.SetActive(false);
+        col = GetComponent<BoxCollider>();
+        col.enabled = true;
+    }
+
+    private void Update()
+    {
+        currentScene = SceneManager.GetActiveScene();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        playerController.EnterBrickMode();
-        camAnim.Play("CameraMove");
-        firstPersonCamera.SetActive(false);
-        brickCamera.SetActive(true);
-        tutorialBrickCam.SetActive(false);
-        StartCoroutine(BrickModeActivate());
+        if (SceneManager.GetActiveScene().name == "Kaine")
+        {
+            brickCamera.SetActive(true);
+            camAnim.Play("CameraMove2");
+            playerController.EnterBrickMode();
+            firstPersonCamera.SetActive(false);
+            tutorialBrickCam.SetActive(false);
+            StartCoroutine(BrickModeActivate1());
+        }
+        else if (SceneManager.GetActiveScene().name == "Part2")
+        {
+            brickCamera.SetActive(true);
+            camAnim.Play("CameraMove");
+            playerController.EnterBrickMode();
+            firstPersonCamera.SetActive(false);
+            tutorialBrickCam.SetActive(false);
+            StartCoroutine(BrickModeActivate2());
+        }
     }
 
-    IEnumerator BrickModeActivate()
+    IEnumerator BrickModeActivate1()
     {
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1f);
+        col.enabled = false;
+        firstPersonCamera.SetActive(false);
+        brickCamera.SetActive(false);
+        tutorialBrickCam.SetActive(true);
+        cursorManager.BrickMode();
+    }
+
+    IEnumerator BrickModeActivate2()
+    {
+        yield return new WaitForSeconds(3f);
         firstPersonCamera.SetActive(false);
         brickCamera.SetActive(false);
         tutorialBrickCam.SetActive(true);

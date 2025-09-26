@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Gate : MonoBehaviour
 {
-    private bool unexploded;
+    public bool unexploded;
 
     public GameObject gatePieces;
     private GameObject player;
@@ -31,7 +31,7 @@ public class Gate : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (unexploded && other.CompareTag("Player"))
+        if (unexploded && other.CompareTag("Brick"))
         {
             player = other.gameObject;
             Explode();

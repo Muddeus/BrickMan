@@ -13,6 +13,11 @@ public class LookAtEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemy == null)
+        {
+            return;
+        }
+
         transform.LookAt(enemy.transform);
     }
 }
