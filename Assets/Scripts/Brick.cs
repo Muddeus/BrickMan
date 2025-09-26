@@ -9,6 +9,8 @@ public class Brick : MonoBehaviour
     public float timeDown;
     public float timeUp;
 
+    public GameObject brickPrefab;
+
     public Transform origin;
 
     public float multDefault;
@@ -24,6 +26,8 @@ public class Brick : MonoBehaviour
     public Vector3 upPos;
 
     public Transform lookAtEnemy;
+
+    public bool brickDuped;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -31,6 +35,7 @@ public class Brick : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         startPos = rb.position;
         launched = false;
+        brickDuped = false;
     }
 
     // Update is called once per frame
@@ -52,6 +57,7 @@ public class Brick : MonoBehaviour
             mouseOffset.y /= 10f;
             mouseOffset.x /= 15f;
             rb.position =  startPos - mouseOffset/100f;
+            brickDuped = false;
 
             if (timeDown > maxMultTime)
             {
@@ -90,6 +96,17 @@ public class Brick : MonoBehaviour
         {
             rb.useGravity = true;
             rb.AddForce(Vector3.down, ForceMode.Force);
+
+            if (!brickDuped && timeUp > 0.1f)
+            {
+                brickDuped = true;
+                GameObject brick = Instantiate(brickPrefab, transform.position, transform.rotation);
+                Rigidbody newRb = brick.GetComponent<Rigidbody>();
+                newRb.linearVelocity = rb.linearVelocity;
+                newRb.angularVelocity = rb.angularVelocity;
+                transform.position += Vector3.down * 50;
+                //newRb = rb;
+            }
         }
         else
         {

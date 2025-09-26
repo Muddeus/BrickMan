@@ -855,6 +855,7 @@ MonoBehaviour:
   mouseDistance: 0
   timeDown: 0
   timeUp: 0
+  brickPrefab: {fileID: 8881084148216847056}
   origin: {fileID: 0}
   multDefault: 0.1
   multPower: 0
@@ -866,6 +867,7 @@ MonoBehaviour:
   startPos: {x: 0, y: 0, z: 0}
   upPos: {x: 0, y: 0, z: 0}
   lookAtEnemy: {fileID: 0}
+  brickDuped: 0
 --- !u!96 &4611801721983656455
 TrailRenderer:
   serializedVersion: 3
