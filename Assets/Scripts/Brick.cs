@@ -104,6 +104,7 @@ public class Brick : MonoBehaviour
                 Rigidbody newRb = brick.GetComponent<Rigidbody>();
                 newRb.linearVelocity = rb.linearVelocity;
                 newRb.angularVelocity = rb.angularVelocity;
+                Destroy(brick.GetComponent<Brick>());
                 transform.position += Vector3.down * 50;
                 //newRb = rb;
             }

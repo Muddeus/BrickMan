@@ -7962,6 +7962,10 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 212022966}
+    - target: {fileID: 7882408214100452782, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
+      propertyPath: brickPrefab
+      value: 
+      objectReference: {fileID: 8881084148216847056, guid: b8aca023582ade64d9c521aff8caf14e, type: 3}
     - target: {fileID: 8678680429690034175, guid: 6ae0feefa73319147ac70a00a2e511c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -12.365515
