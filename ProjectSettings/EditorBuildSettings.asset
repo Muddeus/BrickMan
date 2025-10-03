@@ -5,9 +5,18 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Chris.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f74d761cd9f8cf64c98f91ad2a43cdfc
+  - enabled: 1
+    path: Assets/Scenes/Part1.unity
+    guid: 53ffc31b6501c3647a7ded31710308be
+  - enabled: 1
+    path: Assets/Scenes/Part2.unity
+    guid: f6ab53a720094d24381fad3bea11b52a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

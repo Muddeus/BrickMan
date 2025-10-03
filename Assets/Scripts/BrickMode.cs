@@ -35,7 +35,7 @@ public class BrickMode : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (SceneManager.GetActiveScene().name == "Kaine")
+        if (SceneManager.GetActiveScene().name == "Part1")
         {
             brickCamera.SetActive(true);
             camAnim.Play("CameraMove2");
@@ -44,8 +44,7 @@ public class BrickMode : MonoBehaviour
             tutorialBrickCam.SetActive(false);
             StartCoroutine(BrickModeActivate1());
         }
-        else
-        //else if (SceneManager.GetActiveScene().name == "Part2")
+        else if (SceneManager.GetActiveScene().name == "Part2")
         {
             brickCamera.SetActive(true);
             camAnim.Play("CameraMove");

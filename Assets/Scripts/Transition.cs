@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Transition : MonoBehaviour
 {
@@ -18,7 +19,8 @@ public class Transition : MonoBehaviour
     IEnumerator ChangeScene()
     {
         
-        yield return new WaitForSeconds(3.5f);
+        yield return new WaitForSeconds(1f);
+        SceneManager.LoadScene(2);
         
     }
 }
