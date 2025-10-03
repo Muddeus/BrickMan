@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class Brick : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class Brick : MonoBehaviour
     public float mouseDistance;
     public float timeDown;
     public float timeUp;
+
+    public int maxBricks;
+    public int currentBricks;
+    public TMP_Text text;
 
     public GameObject brickPrefab;
 
@@ -36,6 +41,8 @@ public class Brick : MonoBehaviour
         startPos = rb.position;
         launched = false;
         brickDuped = false;
+        currentBricks = maxBricks;
+        text.text = currentBricks.ToString();
     }
 
     // Update is called once per frame
@@ -90,11 +97,14 @@ public class Brick : MonoBehaviour
             timeUp = 0f;
             upPos = rb.position;
 
-            if (mouseDistance > 200f)
+            if (mouseDistance > 200f && currentBricks > 0)
             {
                 launched = true;
                 Vector3 direction = -mouseOffset * multPower + lookAtEnemy.forward * throwForce;
                 rb.AddForce(direction, ForceMode.Impulse);
+                currentBricks--;
+                text.text = currentBricks.ToString();
+
             }
         }
 
@@ -107,12 +117,17 @@ public class Brick : MonoBehaviour
             if (!brickDuped && timeUp > 0.1f)
             {
                 brickDuped = true;
-                GameObject brick = Instantiate(brickPrefab, transform.position, transform.rotation);
-                Rigidbody newRb = brick.GetComponent<Rigidbody>();
-                newRb.linearVelocity = rb.linearVelocity;
-                newRb.angularVelocity = rb.angularVelocity;
-                Destroy(brick.GetComponent<Brick>());
-                transform.position = Vector3.down * 50;
+                GameObject brick;
+                if (currentBricks > 0)
+                {
+                    brick = Instantiate(brickPrefab, transform.position, transform.rotation);
+                    Rigidbody newRb = brick.GetComponent<Rigidbody>();
+                    newRb.linearVelocity = rb.linearVelocity;
+                    newRb.angularVelocity = rb.angularVelocity;
+                    Destroy(brick.GetComponent<Brick>());
+                    transform.position = Vector3.down * 50;
+                }
+                
                 //newRb = rb;
             }
         }
